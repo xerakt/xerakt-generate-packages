@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "reclone": "rm -rf xerakt/ && git clone --depth 1 https://github.com/xerakt/xerakt.git && rm -rf xerakt/.git",
+    "generate-types": "tsc",
+    "build": "rm -rf packages && node build.js && rm -rf tmp/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xerakt/xerakt-generate-packages.git"
+  },
+  "author": "maronarius",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/xerakt/xerakt-generate-packages/issues"
+  },
+  "homepage": "https://github.com/xerakt/xerakt-generate-packages#readme",
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "ts-loader": "^9.5.1",
+    "uglify-js": "3.19.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1"
+  }
+}

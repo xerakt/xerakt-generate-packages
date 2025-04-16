@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A simple test page for ES6 browsers</title>
+</head>
+
+<body>
+  <script type="module">
+    import {
+      xerakt,
+      useDerivableState,
+      useEffect,
+    } from "../packages/xerakt/esm.js";
+
+    document.body.append(
+      xerakt(() => {
+
+        const [
+          state,
+          setState,
+        ] = useDerivableState(true);
+
+        useEffect(
+          () => setInterval(
+            () => setState(
+              (oldState) => !oldState
+            ),
+            200
+          )
+        );
+
+        return (
+          "xerakt is working"
+          +
+          (state ? "!" : "")
+        );
+      })
+    );
+  </script>
+</body>
+
+</html>

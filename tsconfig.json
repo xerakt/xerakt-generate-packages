@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./tmp/types/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+    "noCheck": true,
+    "declaration": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "downlevelIteration": false,
+    "exactOptionalPropertyTypes": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true
+  }
+}

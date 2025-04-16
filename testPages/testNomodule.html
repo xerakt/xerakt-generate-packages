@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A simple test page for old browsers</title>
+</head>
+
+<body>
+  <script src="../packages/_nomodule/nomodule.js"></script>
+  <script>
+    "use strict";
+    Array.prototype.reduce = (
+      Array.prototype.reduce
+      ||
+      function (callback, initValue) {
+        var idx = +(
+          arguments.length < 2
+        );
+        var accum = (
+          idx
+            ?
+            this[0]
+            :
+            initValue
+        );
+        while (idx < this.length) {
+          accum = callback(
+            accum,
+            this[idx],
+            idx++,
+            this
+          );
+        };
+        return accum;
+      }
+    );
+    Array.prototype.indexOf = (
+      Array.prototype.indexOf
+      ||
+      function (searchItm, fromIdx) {
+        var idx = (
+          fromIdx > 0
+            ?
+            (
+              fromIdx < this.length
+                ?
+                fromIdx
+                :
+                this.length
+            )
+            :
+            0
+        );
+        while (idx < this.length) {
+          if (this[idx] === searchItm) {
+            return idx;
+          };
+          idx++;
+        };
+        return -1;
+      }
+    );
+    Array.prototype.map = (
+      Array.prototype.map
+      ||
+      function (callback, thisArg) {
+        var idx = 0;
+        var accum = [];
+        while (idx < this.length) {
+          accum.push(
+            callback.call(
+              thisArg,
+              this[idx],
+              idx++,
+              this
+            )
+          );
+        };
+        return accum;
+      }
+    );
+    Object.keys = (
+      Object.keys
+      ||
+      function (obj) {
+        var propNames = [];
+        for (var propName in obj) {
+          propNames.push(propName);
+        };
+        return propNames;
+      }
+    );
+
+
+    document.body.appendChild(
+      xerakt(
+        function () {
+
+          var arr = useDerivableState(
+            true
+          );
+          var state = arr[0];
+          var setState = arr[1];
+
+          useEffect(
+            function () {
+              setInterval(
+                function () {
+                  setState(
+                    function (
+                      oldState
+                    ) {
+                      return !oldState;
+                    }
+                  );
+                },
+                200
+              );
+            }
+          );
+
+          return (
+            "xerakt is working"
+            +
+            (state ? "!" : "")
+          );
+        }
+      )
+    );
+  </script>
+</body>
+
+</html>
