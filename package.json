@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/xerakt/xerakt-generate-packages#readme",
   "devDependencies": {
-    "esbuild": "^0.24.2",
+    "esbuild": "^0.25.0",
     "ts-loader": "^9.5.1",
     "uglify-js": "3.19.1",
     "typescript": "^5.7.2",
