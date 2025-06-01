@@ -13,7 +13,7 @@ for generating distributable packages of [xerakt](https://github.com/xerakt/xera
 
 ## installation
 
-navigate to the desired folder (in which the `xerakt-generate-packages` folder (that contains all the files from the repo) should be created by cloning the repo), then clone the repo:
+navigate to the desired parent folder (in which the `xerakt-generate-packages` folder should be created), then clone the repo:
 
 ```bash
 git clone https://github.com/xerakt/xerakt-generate-packages.git
@@ -38,25 +38,25 @@ npm i
 
 
 
-## usage
+## creating bundles
 
-in the project folder run this command to get the latest version of xerakt source files:
-
-```bash
-npm run reclone
-```
-
-<br>
-
-then run this command to generate bundled packages of xerakt:
+in the project folder run this command to generate bundled packages from the latest version of xerakt source files:
 
 ```bash
-npm run build
+npm run build-latest
 ```
 
 \- the ES module package will be in the `./packages/xerakt/` folder, the nomodule package will be in the `./packages/_nomodule/` folder;
 
+> [!CAUTION]  
+> don't run manually any npm script (from the `package.json`) that starts with `__dangerous__` - some of them contain `rm -rf` command that normally uses arguments passed from other scripts, so if you run this script with wrong argument (e. g. `someargument=wrongvalue npm run __dangerous__some-script`), then some of your files or folders can be **undexpectedly deleted**
+
 <br>
+
+
+
+
+## checking the created bundles
 
 you can open `./testPages/testNomodule.html` in your browser to check if the nomodule bundle is working;
 
