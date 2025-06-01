@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/xerakt/xerakt-generate-packages.git"
   },
-  "author": "maronarius",
+  "author": "maronarius & other contributors",
   "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/xerakt/xerakt-generate-packages/issues"
