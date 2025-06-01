@@ -49,7 +49,7 @@ npm run build-latest
 \- the ES module package will be in the `./packages/xerakt/` folder, the nomodule package will be in the `./packages/_nomodule/` folder;
 
 > [!CAUTION]  
-> don't run manually any npm script (from the `package.json`) that starts with `__dangerous__` - some of them contain `rm -rf` command that normally uses arguments passed from other scripts, so if you run this script with wrong argument (e. g. `someargument=wrongvalue npm run __dangerous__some-script`), then some of your files or folders can be **undexpectedly deleted**
+> don't run manually any npm script (from the `package.json`) that starts with `__dangerous__` - some of them contain `rm -r` command that normally uses arguments passed from other scripts, so if you run this script with wrong argument (e. g. `someargument=wrongvalue npm run __dangerous__some-script`), then some of your files or folders can be **undexpectedly deleted**
 
 <br>
 
